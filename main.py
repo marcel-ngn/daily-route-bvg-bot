@@ -25,7 +25,7 @@ url = f"https://v6.bvg.transport.rest/journeys?from={departure_id}&to={destinati
 
 # Make the request to the API
 response = requests.get(url)
-journeys = response.json().get("journeys", [])
+journeys = response.json().get("journeys", [])[:2]
 
 # Parse the journeys to format the information
 messages = []
