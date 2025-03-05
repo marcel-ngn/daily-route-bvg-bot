@@ -13,11 +13,11 @@ def parse_time(time_str):
         return None  # Return None if invalid or unparseable
 
 # Set departure and destination station IDs
-departure_station = "Prenzlauer Prom./Kissingenstr. (Berlin)"
-destination_station = "S Adlershof (Berlin)"
+departure_station = ""
+destination_station = ""
 
-departure_id = "900130015"
-destination_id = "900193002"
+departure_id = ""
+destination_id = ""
 
 
 # API URL with real-time departure
@@ -122,7 +122,7 @@ for journey in journeys:
 final_message = "\n\n".join(messages)
 
 # Send via ntfy
-ntfy_url = "https://ntfy.sh/m-ngn-testing-2255"  # Replace with your actual ntfy topic
+ntfy_url = "https://ntfy.sh/*your-topic*"  # Replace with your actual ntfy topic
 response = requests.post(ntfy_url, data=final_message.encode("utf-8"))
 
 # Check if notification was sent
